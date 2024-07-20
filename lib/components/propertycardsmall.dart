@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:material_color_utilities/material_color_utilities.dart';
 
 class PropertyCardMedium extends StatelessWidget {
   final int index;
@@ -17,7 +15,7 @@ class PropertyCardMedium extends StatelessWidget {
   final ColorScheme colorScheme; // Accept ColorScheme as a parameter
 
   const PropertyCardMedium({
-    Key? key,
+    super.key,
     required this.index,
     required this.propertyName,
     required this.propertyImageUrl,
@@ -28,7 +26,7 @@ class PropertyCardMedium extends StatelessWidget {
     required this.updatedDate,
     required this.features,
     required this.colorScheme, // Include ColorScheme in constructor
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +43,14 @@ class PropertyCardMedium extends StatelessWidget {
           // Property Image and Agent Logo Container
           Container(
             height: 100,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
                     'http://portfolio.asxds.com/assets/imgs/about/3/1.jpg'),
                 fit: BoxFit.cover,
               ),
               borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(10)),
+                  BorderRadius.vertical(top: Radius.circular(10)),
             ),
             child: Stack(
               children: [
@@ -60,7 +58,7 @@ class PropertyCardMedium extends StatelessWidget {
                   top: 8,
                   right: 8,
                   child: IconButton(
-                    icon: Icon(Icons.favorite_border),
+                    icon: const Icon(Icons.favorite_border),
                     onPressed: () {
                       // Handle bookmark/favorite action
                     },
@@ -81,8 +79,8 @@ class PropertyCardMedium extends StatelessWidget {
           //SizedBox(height: 12),
           // Property Details and Price Container
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            color: Color (0XFFFFFFFF), // Use colorScheme
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            color: const Color (0XFFFFFFFF), // Use colorScheme
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -100,13 +98,13 @@ class PropertyCardMedium extends StatelessWidget {
                     ),
                   ],
                 ),
-                Gap(12),
+                const Gap(12),
                 Row(
                   children: [
-                    Icon(Icons.location_on_rounded,size: 16,color: Colors.cyan,),
-                    Gap(4),
+                    const Icon(Icons.location_on_rounded,size: 16,color: Colors.cyan,),
+                    const Gap(4),
                     Text(
-                      '$address',
+                      address,
                       style: GoogleFonts.sen(fontSize: 10),
                     ),
 
@@ -126,13 +124,13 @@ class PropertyCardMedium extends StatelessWidget {
 class PropertyFeatureChip extends StatelessWidget {
   final String label;
 
-  const PropertyFeatureChip({Key? key, required this.label}) : super(key: key);
+  const PropertyFeatureChip({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 8),
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      margin: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: Colors.blue, // Hardcoded color; customize as needed
@@ -140,8 +138,8 @@ class PropertyFeatureChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.check, size: 16, color: Colors.white),
-          SizedBox(width: 4),
+          const Icon(Icons.check, size: 16, color: Colors.white),
+          const SizedBox(width: 4),
           Text(
             label,
             style: GoogleFonts.sen(color: Colors.white, fontSize: 12),

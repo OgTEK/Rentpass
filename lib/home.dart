@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:rentpass/components/propertycardsmall.dart';
-import 'components/search_bar.dart';
 import 'components/propertycard.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'components/searchcontainer.dart';
@@ -11,8 +10,7 @@ class HomePage extends StatelessWidget {
   final String profileImageUrl;
 
   const HomePage(
-      {Key? key, required this.colorScheme, required this.profileImageUrl})
-      : super(key: key);
+      {super.key, required this.colorScheme, required this.profileImageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class HomePage extends StatelessWidget {
         // CustomSearchBar(
         //   colorScheme: colorScheme,
         // ),
-          searchcontainer(
+          const searchcontainer(
             //profileImageUrl: profileImageUrl,
           ),
       ),
@@ -50,11 +48,11 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                             colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
-                      Gap(12),
+                      const Gap(12),
                       PropertyCardLarge(
                         index: 1,
                         address: '3 old marian',
@@ -65,28 +63,28 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                             colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
                     ],
                   ),
                 ),
-                Gap(12),
+                const Gap(12),
                 Row(
                   children: [
                     Text(
                       'Near You',
                       style: GoogleFonts.sen(fontWeight: FontWeight.bold,fontSize: 16,),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'See all',
                       style: GoogleFonts.sen(fontWeight: FontWeight.normal,fontSize: 12,),
                     )
                   ],
                 ),
-                Gap(12),
+                const Gap(12),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -101,11 +99,11 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                             colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
-                      Gap(12),
+                      const Gap(12),
                       PropertyCardMedium(
                         index: 1,
                         address: '3 old marian',
@@ -116,28 +114,28 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                             colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
                     ],
                   ),
                 ),
-                Gap(12),
+                const Gap(12),
                 Row(
                   children: [
                     Text(
                       'Near You',
                       style: GoogleFonts.sen(fontWeight: FontWeight.bold,fontSize: 16,),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Text(
                       'See all',
                       style: GoogleFonts.sen(fontWeight: FontWeight.normal,fontSize: 12,),
                     )
                   ],
                 ),
-                Gap(12),
+                const Gap(12),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -152,11 +150,11 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                         colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
-                      Gap(12),
+                      const Gap(12),
                       PropertyCardMedium(
                         index: 1,
                         address: '3 old marian',
@@ -167,14 +165,14 @@ class HomePage extends StatelessWidget {
                         agentName: 'Agent Name',
                         price: '\$500,000',
                         updatedDate: '1 day ago',
-                        features: ['3 Beds', '2 Baths', '1500 sqft'],
+                        features: const ['3 Beds', '2 Baths', '1500 sqft'],
                         colorScheme:
                         colorScheme, // Pass colorScheme to PropertyCardLarge
                       ),
                     ],
                   ),
                 ),
-                Gap(12),
+                const Gap(12),
 
               ],
             ),

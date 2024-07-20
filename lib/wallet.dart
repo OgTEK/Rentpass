@@ -9,12 +9,12 @@ class WalletPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wallet'),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const WalletBalanceCard(balance: 1450.75),
-          const SizedBox(height: 20),
-          const WalletActions(),
-          const Expanded(child: TransactionList()),
+          WalletBalanceCard(balance: 1450.75),
+          SizedBox(height: 20),
+          WalletActions(),
+          Expanded(child: TransactionList()),
         ],
       ),
     );

@@ -6,26 +6,26 @@ class CustomSearchBar extends StatelessWidget {
   final String profileImageUrl;
 
   const CustomSearchBar({
-    Key? key,
+    super.key,
     required this.colorScheme,
     required this.profileImageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      color: colorScheme.background,
+      color: colorScheme.surface,
       child: Row(
         children: [
           IconButton(
-            icon: Icon(Icons.menu),
-            color: colorScheme.onBackground,
+            icon: const Icon(Icons.menu),
+            color: colorScheme.onSurface,
             onPressed: () {
               // Handle menu button press
             },
           ),
-          Gap(8),
+          const Gap(8),
           Expanded(
             child: Container(
               height: 40,
@@ -53,7 +53,7 @@ class CustomSearchBar extends StatelessWidget {
               ),
             ),
           ),
-          Gap(8),
+          const Gap(8),
           CircleAvatar(
             backgroundImage: NetworkImage(profileImageUrl),
             radius: 20,

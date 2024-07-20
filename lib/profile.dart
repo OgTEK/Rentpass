@@ -9,15 +9,15 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Profile'),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          const UserProfileCard(
+          UserProfileCard(
             userName: 'John Doe',
             userEmail: 'john.doe@example.com',
             userImageUrl: 'https://via.placeholder.com/150', // Placeholder image URL
           ),
-          const SizedBox(height: 20),
-          const Expanded(child: SettingsList()),
+          SizedBox(height: 20),
+          Expanded(child: SettingsList()),
         ],
       ),
     );

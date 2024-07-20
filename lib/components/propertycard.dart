@@ -17,7 +17,7 @@ class PropertyCardLarge extends StatelessWidget {
   final ColorScheme colorScheme; // Accept ColorScheme as a parameter
 
   const PropertyCardLarge({
-    Key? key,
+    super.key,
     required this.index,
     required this.propertyName,
     required this.propertyImageUrl,
@@ -28,7 +28,7 @@ class PropertyCardLarge extends StatelessWidget {
     required this.updatedDate,
     required this.features,
     required this.colorScheme, // Include ColorScheme in constructor
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +45,14 @@ class PropertyCardLarge extends StatelessWidget {
           // Property Image and Agent Logo Container
           Container(
             height: 200,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
                     'http://portfolio.asxds.com/assets/imgs/about/3/1.jpg'),
                 fit: BoxFit.cover,
               ),
               borderRadius:
-                  const BorderRadius.vertical(top: Radius.circular(10)),
+                  BorderRadius.vertical(top: Radius.circular(10)),
             ),
             child: Stack(
               children: [
@@ -60,7 +60,7 @@ class PropertyCardLarge extends StatelessWidget {
                   top: 8,
                   right: 8,
                   child: IconButton(
-                    icon: Icon(Icons.favorite_border),
+                    icon: const Icon(Icons.favorite_border),
                     onPressed: () {
                       // Handle bookmark/favorite action
                     },
@@ -81,8 +81,8 @@ class PropertyCardLarge extends StatelessWidget {
           //SizedBox(height: 12),
           // Property Details and Price Container
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            color: Color (0XFFFDBE5DE), // Use colorScheme
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            color: const Color (0xfffdbe5de), // Use colorScheme
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -100,26 +100,26 @@ class PropertyCardLarge extends StatelessWidget {
                     ),
                   ],
                 ),
-                Gap(12),
+                const Gap(12),
                 Row(
                   children: [
-                    Icon(Icons.location_on_rounded,size: 20,color: Colors.cyan,),
-                    Gap(4),
+                    const Icon(Icons.location_on_rounded,size: 20,color: Colors.cyan,),
+                    const Gap(4),
                     Text(
-                      '$address',
+                      address,
                       style: GoogleFonts.sen(fontSize: 14),
                     ),
 
                   ],
 
                 ),
-Gap(16),
+const Gap(16),
                 Row(
                   children: features
                       .map((feature) => PropertyFeatureChip(label: feature))
                       .toList(),
                 ),
-                Gap(16),
+                const Gap(16),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -130,9 +130,9 @@ Gap(16),
                           backgroundImage: AssetImage(agentLogoUrl),
                           radius: 12,
                         ),
-                        Gap(4),
+                        const Gap(4),
                         Text(
-                          '$agentName',
+                          agentName,
                           style: GoogleFonts.sen(fontSize: 14),
                         ),
 
@@ -141,7 +141,7 @@ Gap(16),
                     ),
 
                     Text(
-                      '$updatedDate',
+                      updatedDate,
                       style: GoogleFonts.barlow(fontSize: 14),
                     ),
                   ],
@@ -159,22 +159,22 @@ Gap(16),
 class PropertyFeatureChip extends StatelessWidget {
   final String label;
 
-  const PropertyFeatureChip({Key? key, required this.label}) : super(key: key);
+  const PropertyFeatureChip({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 8),
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: const BoxDecoration(
         //borderRadius: BorderRadius.circular(20),
         //color: Colors.blue, // Hardcoded color; customize as needed
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.bed, size: 16, color: Colors.black38),
-          SizedBox(width: 4),
+          const Icon(Icons.bed, size: 16, color: Colors.black38),
+          const SizedBox(width: 4),
           Text(
             label,
             style: GoogleFonts.sen(color: Colors.white, fontSize: 12),
